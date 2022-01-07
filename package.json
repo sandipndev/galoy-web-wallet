@@ -1,6 +1,6 @@
 {
   "name": "web-wallet",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "private": true,
   "scripts": {
     "build:all": "yarn install && yarn run build:node && yarn run build:files && yarn run build:webpack",
@@ -21,7 +21,8 @@
     "test:verify": "jest --coverage",
     "test": "cross-env-file -p .env.local jest",
     "tsc:check": "tsc --pretty --noEmit --skipLibCheck",
-    "dev:codegen": "graphql-codegen --config codegen.yml"
+    "dev:codegen": "graphql-codegen --config codegen.yml",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
@@ -96,6 +97,17 @@
     "prettier": "^2.5.1",
     "ts-jest": "^27.1.2",
     "ts-node-dev": "^1.1.8",
-    "typesync": "^0.8.0"
+    "typesync": "^0.8.0",
+    "semantic-release": "^18.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandipndev/galoy-web-wallet.git"
+  },
+  "release": {
+    "branches": ["release"],
+    "plugins": [
+      ["@semantic-release/npm", { "npmPublish": false }]
+    ]
   }
 }
