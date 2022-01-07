@@ -8,6 +8,7 @@ const navigateToHome = () => {
   history.push("/")
 }
 
+
 type Props = {
   balance: number
 }
