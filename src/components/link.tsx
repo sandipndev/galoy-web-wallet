@@ -8,7 +8,7 @@ type Props = {
 const Link = ({ to, children }: Props) => {
   const navigate: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
     if (!event.ctrlKey && !event.metaKey) {
-      event.preventDefault();
+      event.preventDefault()
     }
     history.push(to)
   }
